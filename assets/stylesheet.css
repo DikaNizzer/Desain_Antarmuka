@@ -1,0 +1,135 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body,
+ul, ol, li,
+h1, h2, h3, h4, h5, h6, p, div {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Lucida Grande";
+}
+
+a {
+  text-decoration: none;
+}
+
+.clear {
+  clear: left;
+}
+
+.container {
+  max-width: 1170px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.top-wrapper {
+  padding: 180px 0 360px 0;
+  background-image: url('../assets/bg/bg1.png');
+  background-size: cover;
+  color: white;
+  text-align: center;
+  background-repeat: no-repeat;
+}
+
+header {
+  height: 120px;
+  width: 100%;
+  position :fixed;
+  top: 0;
+  z-index: 10;
+  background-image: url('../assets/bg/bg1.png');
+  background-size: cover;
+}
+
+hr {
+  margin-top: 15px;
+  color: white;
+}
+
+.header-top {
+  float: right;
+}
+
+.header-top p{
+  float: left;
+  margin-left: 40px;
+  margin-top: 30px;
+  color: white;
+}
+
+.header-right {
+  float: right;
+  margin-right: -25px;
+}
+
+.header-right a {
+  line-height: 40px;
+  padding: 0 25px;
+  color: white;
+  display: block;
+  float: left;
+  transition: all 0.5s;
+}
+
+.header-right a:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+footer img {
+  width: 125px;
+}
+
+footer p {
+  color: #b3aeb5;
+  font-size: 12px;
+}
+
+footer {
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+
+.menu-icon {
+  color: white;
+  float: right;
+  font-size: 25px;
+  padding: 21px 0;
+  display: none;
+}
+
+
+
+/* Pilihan Dokter / Jadwal */
+
+.content {
+  padding-top: 180px;
+  color: white;
+}
+
+.tab {
+  float: left;
+  width: 50%;
+  text-align: center;
+}
+
+.tab a {
+  line-height: 40px;
+  color: rgba(0,43,125,1.00);
+  display: block;
+  transition: all 0.5s;
+  border-radius: 30px;
+  font-weight: bold;
+}
+
+.tab a:hover {
+  background-color: rgba(0,43,125,1.00);
+  color: rgba(255,255,255,1.00);
+  font-weight: normal;
+}
+
+/* Pilihan Dokter / Jadwal */

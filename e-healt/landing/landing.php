@@ -31,12 +31,20 @@
             </div>
         </div>
 
+        <div class="kuning" style="background-color:rgb(224, 192, 8); width: 50%; float:right">
+        <center> #right content in there </center>
+        </div>
+
+        <div style="width: 50%; float:left">
+        #left content in here
+        </div>
+
+        
 
         
         <footer>
             <div class="container">
-                <img src="https://prog-8.com/images/html/advanced/footer_logo.png">
-                <p>Learn to code, learn to be creative.</p>
+                
             </div>
         </footer>
     </body>

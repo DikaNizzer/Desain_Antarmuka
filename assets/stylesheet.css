@@ -30,10 +30,12 @@ a {
 .top-wrapper {
   padding: 180px 0 360px 0;
   background-image: url('../assets/bg/bg1.png');
-  background-size: cover;
-  color: white;
+  background-color:rgb(224, 192, 8);
+  /* background-size: cover; */
+  color:rgb(224, 192, 8);;
   text-align: center;
   background-repeat: no-repeat;
+  
 }
 
 header {
@@ -102,7 +104,10 @@ footer {
   display: none;
 }
 
-
+/* pendaftaran bg */
+.kuning {
+  background-color:rgb(224, 192, 8);
+}
 
 /* Pilihan Dokter / Jadwal */
 

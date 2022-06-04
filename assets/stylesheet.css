@@ -48,7 +48,7 @@ header {
   background-size: cover;
 }
 
-hr {
+.header-right hr {
   margin-top: 15px;
   color: white;
 }
@@ -112,7 +112,7 @@ footer {
 /* Pilihan Dokter / Jadwal */
 
 .content {
-  padding-top: 180px;
+  padding-top: 150px;
   color: white;
 }
 
@@ -125,16 +125,148 @@ footer {
 .tab a {
   line-height: 40px;
   color: rgba(0,43,125,1.00);
-  display: block;
   transition: all 0.5s;
   border-radius: 30px;
   font-weight: bold;
+  padding: 10px 40px;
 }
 
 .tab a:hover {
   background-color: rgba(0,43,125,1.00);
   color: rgba(255,255,255,1.00);
-  font-weight: normal;
+  font-weight: bold;
+  padding: 10px 40px;
+}
+
+.line-content {
+  color: rgba(0,43,125,1.00);
+}
+
+.doctors {
+  text-align: center;
+}
+
+.doctor {
+  display: inline-block;
+  width: 20%;
+  margin: 15px;
+  text-align: center;
+}
+
+.doctor img {
+  width: 75%;
+  border-radius: 50%;
+}
+
+.doctor h4 {
+  margin-top: 15px;
+  color: rgba(0,43,125,1.00);
+}
+
+.doctors h2 {
+  margin: 15px 0 15px 0;
+  color: rgba(0,43,125,1.00);
+}
+
+.schedules {
+  text-align: center;
+  margin: 30px 0 30px 0;
+}
+
+.border-schedule {
+  width: 40%;
+  border-style: solid;
+  border-width: medium;
+  border-color: rgba(0,43,125,1.00);
+  display: inline-block;
+  border-radius: 15px;
+}
+
+.schedule {
+  text-align: center;
+  margin: 20px 0 20px 40px;
+}
+
+.schedule h2 {
+  color: rgba(0,43,125,1.00);
+  margin-left: -40px;
+}
+
+.input {
+  text-align: left;
+  float: left;
+  width: 50%;
+  margin: 30px 0;
+
+}
+
+.input p {
+  font-weight: bold;
+  color: rgba(0,43,125,1.00);
+}
+
+.input input,select {
+  width: 80%;
+  height: 30px;
+  margin-top: 5px;
+}
+
+.submit {
+  color: white;
+  background-color: rgba(0,43,125,1.00);
+  transition: all 0.5s;
+  border-radius: 30px;
+  font-weight: bold;
+  padding: 5px 40px;
+  margin-left: -40px;
+}
+
+.dates {
+  text-align: center;
+}
+
+.date {
+  display: inline;
+  text-align: center;
+}
+
+.date a {
+  padding: 15px 0;
+  font-weight: bolder;
+  color: rgba(0,43,125,1.00);
+  width: 13.5%;
+  display: inline-block;
+}
+
+.hari {
+  font-size: 26px;
+}
+
+.date a:hover {
+  background-color: rgba(0,43,125,1.00);
+  color: white;
+}
+
+.times {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.time {
+  display: inline;
+  text-align: center;
+}
+
+.time a {
+  padding: 15px 25px;
+  font-weight: bolder;
+  color: rgba(0,43,125,1.00);
+  width: 15%;
+  margin: 15px 5px;
+  display: inline-block;
+  border-style: solid;
+  border-width: medium;
+  border-color: rgba(0,43,125,1.00);
 }
 
 /* Pilihan Dokter / Jadwal */

@@ -7,8 +7,8 @@
     <title>E - Healt</title>
     <link rel="stylesheet" href="../../assets/stylesheet.css">
 </head>
-    <body style="background-color: #D7B94C;">
-        <!-- <header> -->
+    <body >
+        <header2>
             <div class="container">
                 <div class="header-top">
                     <p>Jl. Airlangga No.4 - 6, Airlangga, Kota Surabaya.</p>
@@ -25,31 +25,17 @@
                     <a href="#">Kontak</a>
                 </div>
             </div>
-        <!-- </header> -->
-        <div class="top-wrapper">
-            <div class="container">
-            </div>
+        </header2>
+
+        <div class="pembatas">
+            <!-- <div class="container"></div> -->
+        </div>
+        
+        <div class="container" style="margin-top:460px">
+            <center><h1>Pendaftaran Layanan</h1></center>
         </div>
 
-        <div class="batal">
-        <center><h1>Batalkan Pendaftaran</h1></center>
-        <img src="../../assets/landing/daftar.png" />
-        <p>Batalkan Data Pendaftaran <br>Anda</p>
-
-        <button class="">Batalkan</button>
-        </div>
-
-
-
-        <div class="daftar">
-        <center><h1>Pendaftaran Online</h1></center>
-        <img src="../../assets/landing/daftar.png" />
-
-        <p>Dengan Fasilitas ini 
-            anda melakukan <br> pendaftaran layanan secara online</p>
-
-        <a href="../form_daftar/cek.php"><button class="">Daftar</button></a>
-        </div>
+        
 
         
         

@@ -109,7 +109,7 @@ input[type=submit]:hover {
 </style>
 </head>
     <body>
-        <header style="height: 425px; position:relative;">
+        <header style="height: 120px; position:relative;">
             <div class="container" >
                 <div class="header-top">
                     <p>Jl. Airlangga No.4 - 6, Airlangga, Kota Surabaya.</p>
@@ -221,7 +221,8 @@ if(isset($_POST['Submit'])){
 
             // Kalau NIK dan Nama Cocok
             echo "<script> 
-            document.location.href = 'verifikasi.php';
+            alert('Data SAMA');
+            
             </script>";
         }else{
             echo "<script> 

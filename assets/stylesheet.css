@@ -197,27 +197,18 @@ footer {
 
 /* Cek.php */
 /* Form Cek NIK dan Nama */
-header2 {
-  height: 430px;
-  width: 100%;
-  position :fixed;
-  top: 0;
-  z-index: 10;
-  background-image: url('../assets/bg/bg1.png');
-  background-size: cover;
-}
 
 .pembatas{
-  position: absolute;
+position: relative;
 width: 80%;
-height: 40px;
+height:30px;
 margin-left: 8%;
 margin-right: 10%;
-top: 420px;
+margin-top: -10px;
 z-index: 10;
-background: #D7B94C;;
+background: #D7B94C;
 border-radius: 15px;
-
+margin-bottom: 1px;
 }
 
 

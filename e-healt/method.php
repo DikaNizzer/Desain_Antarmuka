@@ -1,6 +1,5 @@
 <?php
 
-
 // menghubungkan ke db
 $koneksi = mysqli_connect("localhost", "root", "", "desmuk");
 

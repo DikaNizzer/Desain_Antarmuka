@@ -33,7 +33,7 @@
 
         <div class="batal">
         <center><h1>Batalkan Pendaftaran</h1></center>
-        <img src="../../assets/landing/daftar.png" />
+        <img src="../../assets/bg/calendar.png" style="height:240px"/>
         <p>Batalkan Data Pendaftaran <br>Anda</p>
 
         <button class="">Batalkan</button>

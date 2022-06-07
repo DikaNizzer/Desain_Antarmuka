@@ -176,7 +176,7 @@ input[type=submit]:hover {
 
         <br>
             <!-- <div class="row"> -->
-                <center><input type="submit" value="Submit" name="Submit"></center>
+                <center><input type="submit" value="periksa" name="Submit"></center>
             <!-- </div> -->
             </form>
         </div>

@@ -143,7 +143,7 @@ input[type=submit]:hover {
                         <label for="nik">NIK</label>
                     </div>
                     <div class="col-75">
-                        <input type="text" id="nik" name="nik" placeholder="Masukkan NIK sesuai KK">
+                        <input type="text" id="nik" name="nik" value="152011513034" style="background-color: #beb9b9; " readonly>
                     </div>
                 </div>
                 <div class="row">
@@ -151,7 +151,33 @@ input[type=submit]:hover {
                         <label for="nama">Nama</label>
                     </div>
                     <div class="col-75">
-                        <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap sesuai KK">
+                        <input type="text" id="nama" name="nama" value="Andika Surya" style="background-color: #beb9b9; "readonly>
+                        
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="nama">Tanggal Lahir</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="nama" name="nama" value="28 - 09- 2001" style="background-color: #beb9b9; " readonly>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="nama">Usia</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="nama" name="nama" value="20" style="background-color: #beb9b9; " readonly
+                        >
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="nama">Alamat</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="nama" name="nama" placeholder="Masukkan alamat anda">
                     </div>
                 </div>
 
@@ -176,7 +202,7 @@ input[type=submit]:hover {
 
         <br>
             <!-- <div class="row"> -->
-                <center><input type="submit" value="Submit" name="Submit"></center>
+                <center><input type="submit" value="Daftar" name="Submit"></center>
             <!-- </div> -->
             </form>
         </div>

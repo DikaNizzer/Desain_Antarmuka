@@ -137,13 +137,13 @@ input[type=submit]:hover {
 
         
         <div class="container">
-            <form action="" method="POST">
+            <form>
                 <div class="row">
                     <div class="col-25">
                         <label for="nik">NIK</label>
                     </div>
                     <div class="col-75">
-                        <input type="text" id="nik" name="nik" value="152011513034" style="background-color: #beb9b9; " readonly>
+                        <input type="text" id="nik" name="nik" value="152011513034" style="background-color: #E5E5E5; " readonly>
                     </div>
                 </div>
                 <div class="row">
@@ -151,7 +151,7 @@ input[type=submit]:hover {
                         <label for="nama">Nama</label>
                     </div>
                     <div class="col-75">
-                        <input type="text" id="nama" name="nama" value="Andika Surya" style="background-color: #beb9b9; "readonly>
+                        <input type="text" id="nama" name="nama" value="Andika Surya" style="background-color: #E5E5E5; "readonly>
                         
                     </div>
                 </div>
@@ -160,7 +160,7 @@ input[type=submit]:hover {
                         <label for="nama">Tanggal Lahir</label>
                     </div>
                     <div class="col-75">
-                        <input type="text" id="nama" name="nama" value="28 - 09- 2001" style="background-color: #beb9b9; " readonly>
+                        <input type="text" id="nama" name="nama" value="28 - 09- 2001" style="background-color: #E5E5E5; " readonly>
                     </div>
                 </div>
                 <div class="row">
@@ -168,7 +168,7 @@ input[type=submit]:hover {
                         <label for="nama">Usia</label>
                     </div>
                     <div class="col-75">
-                        <input type="text" id="nama" name="nama" value="20" style="background-color: #beb9b9; " readonly
+                        <input type="text" id="nama" name="nama" value="20" style="background-color: #E5E5E5; " readonly
                         >
                     </div>
                 </div>
@@ -202,33 +202,20 @@ input[type=submit]:hover {
 
         <br>
             <!-- <div class="row"> -->
-                <center><input type="submit" value="Daftar" name="Submit"></center>
+                <a href="../poli/poli.php"><center><input type="submit" value="Daftar" name="Submit"></center></a>
             <!-- </div> -->
             </form>
         </div>
         
         
 
-        <a href='#' onclick='example()'>open</a>
-        <div id="example">
-            <div>
-                <h3>Data Tidak Ditemukan !</h3>
-                <center><img src='../../assets/bg/folder.png' style="width:200px; height:200px; align:center; position:relative;"></center>
-                <a href='#' onclick='example()'>Tutup</a>
-            </div>
-            <script>
-                function example() {
-                el = document.getElementById("example");
-                el.style.visibility = (el.style.visibility == "visible") ? "hidden" : "visible";
-                }
-            </script>
-        </div>
+        
 
         
     </body>
 </html>
 
-
+<!-- 
 <?php
 
 if(isset($_POST['Submit'])){
@@ -267,4 +254,4 @@ if(isset($_POST['Submit'])){
 
 
 
-?>
+?> -->

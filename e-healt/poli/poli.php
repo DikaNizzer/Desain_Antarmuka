@@ -128,11 +128,11 @@
         <br>
 
         <div class="container">
-          <div class="wrap">
+          <a href="../dokter/"><div class="wrap">
 	          <div class="box one">
 		          <h1>Umum</h1>
 	          </div>
-          </div>
+          </div></a>
           <div class="wrap">
 	          <div class="box two">
 		          <h1>Gigi</h1>

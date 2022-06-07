@@ -41,8 +41,8 @@
 
 .box {
 	margin: 10px;
-	width: 180px;
-	height: 180px;
+	width: 200px;
+	height: 200px;
 	text-align: center;
 	border-radius: 5px;
 	-webkit-transition: 200ms ease-in-out;
@@ -183,9 +183,6 @@
         <br>
 
         <div class="container">
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
           	<div class="wrap">
 	          	<div class="box one">
 		        	<h1>Umum</h1>
@@ -236,28 +233,7 @@
 		    		<h1>Rehab</h1>
 	          	</div>
           	</div>
-=======
->>>>>>> Stashed changes
-          <a href="../dokter/"><div class="wrap">
-	          <div class="box one">
-		          <h1>Umum</h1>
-	          </div>
-          </div></a>
-          <div class="wrap">
-	          <div class="box two">
-		          <h1>Gigi</h1>
-	          </div>
-          </div>
-          <div class="wrap">
-	          <div class="box one">
-		          <h1>Umum</h1>
-	          </div>
-          </div>
->>>>>>> 3a6941460c7f76fb0e30da13d3f62a2784ed5d89
         </div>
-
-        
-        
 
     </body>
 </html>

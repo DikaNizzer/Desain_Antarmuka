@@ -70,19 +70,74 @@
 }
 
 .one {
-	background-image: url('../../assets/bg/umum.png');
+	background-image: url('../../assets/poli/umum.png');
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
 }
 
 .two {
-	background-image: url('../../assets/bg/gigi.png');
+	background-image: url('../../assets/poli/gigi.png');
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
 }
 
+.three {
+	background-image: url('../../assets/poli/kia.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+.four {
+	background-image: url('../../assets/poli/gizi.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+.five {
+	background-image: url('../../assets/poli/anak.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+.six {
+	background-image: url('../../assets/poli/batra.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+.seven {
+	background-image: url('../../assets/poli/jantung.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+.eight {
+	background-image: url('../../assets/poli/tht.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+.nine {
+	background-image: url('../../assets/poli/mata.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+.ten {
+	background-image: url('../../assets/poli/rehab.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
 @-webkit-keyframes rotation {
 		from {
 				-webkit-transform: rotate(0deg);
@@ -128,6 +183,61 @@
         <br>
 
         <div class="container">
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+          	<div class="wrap">
+	          	<div class="box one">
+		        	<h1>Umum</h1>
+	          	</div>
+          	</div>
+          	<div class="wrap">
+	        	<div class="box two">
+		        	<h1>Gigi</h1>
+	          	</div>
+          	</div>
+          	<div class="wrap">
+	          	<div class="box three">
+		    		<h1>KIA</h1>
+	          	</div>
+          	</div>
+			<div class="wrap">
+	          	<div class="box four">
+		    		<h1>Gizi</h1>
+	          	</div>
+          	</div>
+			<div class="wrap">
+	          	<div class="box five">
+		    		<h1>Anak</h1>
+	          	</div>
+          	</div>
+			  <div class="wrap">
+	          	<div class="box six">
+		    		<h1>Batra</h1>
+	          	</div>
+          	</div>
+			<div class="wrap">
+	          	<div class="box seven">
+		    		<h1>Jantung</h1>
+	          	</div>
+          	</div>
+			<div class="wrap">
+	          	<div class="box eight">
+		    		<h1>THT</h1>
+	          	</div>
+          	</div>
+			<div class="wrap">
+	          	<div class="box nine">
+		    		<h1>Mata</h1>
+	          	</div>
+          	</div>
+			<div class="wrap">
+	          	<div class="box ten">
+		    		<h1>Rehab</h1>
+	          	</div>
+          	</div>
+=======
+>>>>>>> Stashed changes
           <a href="../dokter/"><div class="wrap">
 	          <div class="box one">
 		          <h1>Umum</h1>
@@ -143,6 +253,7 @@
 		          <h1>Umum</h1>
 	          </div>
           </div>
+>>>>>>> 3a6941460c7f76fb0e30da13d3f62a2784ed5d89
         </div>
 
         

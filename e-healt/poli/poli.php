@@ -183,7 +183,6 @@
         <br>
 
         <div class="container">
-<<<<<<< Updated upstream
           	<div class="wrap">
 	          	<div class="box one">
 		        	<h1>Umum</h1>
@@ -234,23 +233,6 @@
 		    		<h1>Rehab</h1>
 	          	</div>
           	</div>
-=======
-          <a href="../dokter/dokter.php"><div class="wrap">
-	          <div class="box one">
-		          <h1>Umum</h1>
-	          </div>
-          </div></a>
-          <div class="wrap">
-	          <div class="box two">
-		          <h1>Gigi</h1>
-	          </div>
-          </div>
-          <div class="wrap">
-	          <div class="box one">
-		          <h1>Umum</h1>
-	          </div>
-          </div>
->>>>>>> Stashed changes
         </div>
 
     </body>

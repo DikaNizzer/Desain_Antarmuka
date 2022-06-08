@@ -21,6 +21,31 @@
   margin: center;
 }
 
+.border-schedule1 {
+  width: 40%;
+  border-style: solid;
+  border-width: medium;
+  border-color: rgba(0,43,125,1.00);
+  display: inline-block;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.schedule1 {
+  text-align: center;
+  margin: 20px 0 20px 0px;
+}
+
+.schedule1 h2 {
+  color: rgba(0,43,125,1.00);
+  margin-left: 0px;
+}
+
+.line-content1 h2 {
+  color: rgba(0,43,125,1.00);
+  margin-left: 0px;
+}
+
 input[type=text], select, textarea {
   width: 100%;
   padding: 12px;
@@ -103,13 +128,14 @@ input[type=submit]:hover {
         
         <div class="container1">
           <div class="schedules">
-            <div class="border-schedule">
-              <div class="schedule">
+            
+            <div class="border-schedule1">
+              <div class="schedule1">
                 <form class="" action="">
                   <h2>E - Health</h2>
                   <p>Jl. Airlangga No.4 - 6, Airlangga, Kota Surabaya</p>
                   <p>+62 81234567</p>
-                  <div class="line-content"><hr><div> 
+                  <div class="line-content1"><hr><div> 
                   <h2>Gigi</h2>
                   <h2>3</h2>
                   <h4>3578152011513034</h4>
@@ -121,7 +147,7 @@ input[type=submit]:hover {
             </div>
           </div>
         </div>
-        <br><br><center><input type="submit" value="Submit" name="Submit"></center>
+        <br><br><center><input type="submit" value="Cetak" name="Cetak"></center>
 
     </body>
 </html>

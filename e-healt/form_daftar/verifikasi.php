@@ -137,7 +137,7 @@ input[type=submit]:hover {
 
         
         <div class="container">
-            <form>
+            <!-- <form> -->
                 <div class="row">
                     <div class="col-25">
                         <label for="nik">NIK</label>
@@ -202,9 +202,9 @@ input[type=submit]:hover {
 
         <br>
             <!-- <div class="row"> -->
-                <a href="../poli/poli.php"><center><input type="submit" value="Daftar" name="Submit"></center></a>
+                <a href="../poli/poli.php"><center><input type="submit" value="Daftar"></center></a>
             <!-- </div> -->
-            </form>
+            <!-- </form> -->
         </div>
         
         

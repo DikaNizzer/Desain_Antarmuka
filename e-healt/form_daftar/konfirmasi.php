@@ -1,3 +1,46 @@
+<?php
+$layanan = ucwords($_GET["layanan"]);
+$dokter = $_GET['dokter'];
+
+function tgl_indo($tanggal){
+  $bulan = array (
+    1 =>   'Januari',
+    'Februari',
+    'Maret',
+    'April',
+    'Mei',
+    'Juni',
+    'Juli',
+    'Agustus',
+    'September',
+    'Oktober',
+    'November',
+    'Desember'
+  );
+  $pecahkan = explode('-', $tanggal);
+  
+  // variabel pecahkan 0 = tanggal
+  // variabel pecahkan 1 = bulan
+  // variabel pecahkan 2 = tahun
+ 
+  return $pecahkan[2] . ' ' . $bulan[ (int)$pecahkan[1] ] . ' ' . $pecahkan[0];
+}
+$tgl = tgl_indo($_GET["tgl"]);
+$day = date('D', strtotime($tgl));
+$dayList = array(
+    'Sun' => 'Minggu',
+    'Mon' => 'Senin',
+    'Tue' => 'Selasa',
+    'Wed' => 'Rabu',
+    'Thu' => 'Kamis',
+    'Fri' => 'Jumat',
+    'Sat' => 'Sabtu'
+);
+$hari = $dayList[$day];
+
+$jam = $_GET['jam'];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -184,7 +227,7 @@ input[type=submit]:hover {
                 <label for="poli">Poli</label>
               </div>
               <div class="col-75">
-                <input type="text" id="poli" name="poli" value="Gigi">
+                <input type="text" id="poli" name="poli" value="<?=$layanan?>">
               </div>
             </div>
             <div class="row">
@@ -192,7 +235,7 @@ input[type=submit]:hover {
                 <label for="dokter">Dokter</label>
               </div>
               <div class="col-75">
-                <input type="text" id="dokter" name="dokter" value="drg. Andika Surya Rahmad">
+                <input type="text" id="dokter" name="dokter" value="<?=$dokter?>">
               </div>
             </div>
             <div class="row">
@@ -200,7 +243,7 @@ input[type=submit]:hover {
                 <label for="date">Hari, Tanggal</label>
               </div>
               <div class="col-75">
-                <input type="text" id="date" name="date" value="Selasa, 24 Mei 2022">
+                <input type="text" id="date" name="date" value="<?=$hari?>, <?=$tgl?>">
               </div>
             </div>
             <div class="row">
@@ -208,7 +251,7 @@ input[type=submit]:hover {
                 <label for="pukul">Pukul</label>
               </div>
               <div class="col-75">
-                <input type="text" id="pukul" name="pukul" value="19.00 WIB">
+                <input type="text" id="pukul" name="pukul" value="<?=$jam?>">
               </div>
             </div>
         

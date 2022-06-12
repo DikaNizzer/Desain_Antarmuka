@@ -1,6 +1,7 @@
 <?php
 include '../method.php';
 $layanan = $_GET["layanan"];
+$dokter = $_GET['dokter'];
 $tgl = date('Y-m-d');
 $day = date('D', strtotime($tgl));
 $dayList = array(
@@ -13,9 +14,8 @@ $dayList = array(
     'Sat' => 'Sabtu'
 );
 $hariIni = $dayList[$day];
-
-
-if (isset($_GET['tgl'])){
+if (isset($_GET['dokter']) && isset($_GET['tgl'])){
+  $dokter = $_GET['dokter'];
   $tgl = $_GET['tgl'];
   $day = date('D', strtotime($tgl));
   $dayList = array(
@@ -30,7 +30,15 @@ if (isset($_GET['tgl'])){
   $hariIni = $dayList[$day];
 }
 
-$waktuIsi = query("SELECT jam FROM pendaftaran WHERE tgl_daftar = '$tgl'");
+$idDokter = 0;
+
+foreach($dokters as $dokters){
+  if($dokters["nama"] === $dokter){
+    $idDokter = $dokters["id"];
+  }
+}
+
+$waktuIsi = query("SELECT jam FROM pendaftaran WHERE tgl_daftar = '$tgl' AND dokter = '$idDokter'");
 
 if (count($waktuIsi)>0){
   $a = 0;
@@ -38,17 +46,6 @@ if (count($waktuIsi)>0){
     $waktu[$a] = $waktuIsi["jam"];
     $a++;
   }
-
-  $nDokters = 0;
-  $i = 0;
-  foreach ($dokters as $dokters){
-    if($dokters["layanan"] === $layanan){
-      $nDokters++;
-      $idDokter[$i] = $dokters["id"];
-      $i++;
-    }
-  }
-  $idDokter = implode("','", $idDokter  );
   //$waktu = implode("','", $waktu  );
   //$jamBiru = query("SELECT jam FROM jam WHERE jam NOT IN ($waktu)");
   //$jamMerah = query("SELECT jam FROM jam WHERE jam IN ($waktu)");
@@ -87,12 +84,12 @@ if (count($waktuIsi)>0){
         <div class="container">
             <div class="tabs">
                 <div class="tab">
-                    <a href="#">Jadwal</a>
+                    <a href="../jadwal/jadwal.php?layanan=<?=$layanan?>">Jadwal</a>
                 </div>
                 <div class="tab">
                     <a href="../dokter/dokter.php?layanan=<?=$layanan?>">Dokter</a>
                 </div>
-            </div>  
+            </div> 
             <div class="line-content">
                 <hr>
             </div> 
@@ -136,7 +133,7 @@ if (count($waktuIsi)>0){
                     );
                 ?>
                 <div class="date">
-                    <a href="jadwal.php?layanan=<?=$layanan?>&tgl=<?=$tanggalAsli;?>">
+                    <a href="jadwal.php?layanan=<?=$layanan;?>&dokter=<?=$dokter;?>&tgl=<?=$tanggalAsli;?>">
                         <p class="hari"><?= $dayList[$day] ?></p>
                         <p class="tanggal"><?= $tanggal ?></p>
                     </a>
@@ -156,35 +153,43 @@ if (count($waktuIsi)>0){
                           <a class="waktu-red" href="#"><?=$jam[$i];?></a>
                         <?php
                       } 
-                    } else {
-                      if (count($waktuIsi)>0){
-                        $i=0;
-                        while($i<$nJam){
-                          $nDokterIsi = count(query("SELECT dokter FROM pendaftaran WHERE tgl_daftar = '$tgl' AND jam = '$jam[$i]' AND dokter IN ($idDokter)"));
-                          if($nDokters == $nDokterIsi){
+                    } else if (count($waktuIsi)>0){
+                      $nWaktu = count($waktu);
+                      $iWaktu=0;
+                      $i=0;
+                      while($i<$nJam){
+                        if($iWaktu<$nWaktu){
+                          if($jam[$i] === $waktu[$iWaktu]){
                             ?>  
                               <a class="waktu-red" href="#"><?=$jam[$i];?></a>
                             <?php
+                            $iWaktu++;
                           } else {
                             ?>  
-                              <a class="waktu-normal" href="dokter.php?layanan=<?=$layanan?>&tgl=<?=$tgl;?>&jam=<?=$jam[$i];?>"><?=$jam[$i];?></a>
+                              <a class="waktu-normal" href="../form_daftar/konfirmasi.php?layanan=<?=$layanan;?>&dokter=<?=$dokter;?>&tgl=<?=$tgl;?>&jam=<?=$jam[$i];?>"><?=$jam[$i];?></a>
                             <?php
                           }
-                          $i++;
-                        }
-                      } else {
-                        for ($i=0; $i<$nJam; $i++){
+                        } else {
                           ?>  
-                            <a class="waktu-normal" href="dokter.php?layanan=<?=$layanan?>&tgl=<?=$tgl;?>&jam=<?=$jam[$i];?>"><?=$jam[$i];?></a>
+                            <a class="waktu-normal" href="../form_daftar/konfirmasi.php?layanan=<?=$layanan;?>&dokter=<?=$dokter;?>&tgl=<?=$tgl;?>&jam=<?=$jam[$i];?>"><?=$jam[$i];?></a>
                           <?php
-                        } 
+                        }
+                        $i++;
                       }
+                    } else {
+                      for ($i=0; $i<$nJam; $i++){
+                        ?>  
+                          <a class="waktu-normal" href="../form_daftar/konfirmasi.php?layanan=<?=$layanan;?>&dokter=<?=$dokter;?>&tgl=<?=$tgl;?>&jam=<?=$jam[$i];?>"><?=$jam[$i];?></a>
+                        <?php
+                      } 
                     }
                     ?>
                 </div>
             </div>  
         </div>
     </div>
+    
+    <?php //var_dump($jamMerah); ?>
     
     <footer>
       <div class="container">

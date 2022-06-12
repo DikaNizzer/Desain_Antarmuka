@@ -1,3 +1,22 @@
+<?php
+include '../method.php';
+$layanan = $_GET["layanan"];
+$tgl = $_GET['tgl'];
+$jam = $_GET['jam'];
+
+$dokterIsi = query("SELECT dokter FROM pendaftaran WHERE tgl_daftar = '$tgl'");
+
+if (count($dokterIsi)>0){
+  $a = 0;
+  foreach ($dokterIsi as $dokterIsi){
+    $dokter[$a] = $dokterIsi["dokter"];
+    $a++;
+  }
+  //$waktu = implode("','", $waktu  );
+  //$jamBiru = query("SELECT jam FROM jam WHERE jam NOT IN ($waktu)");
+  //$jamMerah = query("SELECT jam FROM jam WHERE jam IN ($waktu)");
+}
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -30,47 +49,10 @@
         <div class="container">
             <div class="tabs">
                 <div class="tab">
-                    <a href="#">Jadwal</a>
+                    <a href="../jadwal/jadwal.php?layanan=<?=$layanan?>">Jadwal</a>
                 </div>
                 <div class="tab">
-                    <a href="../dokter/dokter.php">Dokter</a>
-                </div>
-            </div> 
-            <div class="line-content">
-                <hr>
-            </div> 
-            <div class="schedules">
-                <div class="border-schedule">
-                    <div class="schedule">
-                      <form class="" action="">
-                          <h2>Pilih Tanggal dan Waktu</h2>
-                          <div class="input">
-                              <p>Tanggal</p>
-                              <input type="text" name="tanggal" placeholder="<?= date('Y-m-d');?>" onfocus="(this.type='date')">
-                          </div>
-                          <div class="input">
-                              <p>Waktu</p>
-                              <select name="waktu" id="waktu">
-                                  <option value="">Pilih Jam</option>
-                                  <option value="05.30">05.30</option>
-                                  <option value="06.00">06.00</option>
-                                  <option value="06.30">06.30</option>
-                                  <option value="07.00">07.00</option>
-                                  <option value="07.30">07.30</option>
-                                  <option value="08.00">08.00</option>
-                                  <option value="17.00">17.00</option>
-                                  <option value="17.30">17.30</option>
-                                  <option value="18.30">18.30</option>
-                                  <option value="19.00">19.00</option>
-                                  <option value="19.30">19.30</option>
-                                  <option value="20.00">20.00</option>
-                              </select>
-                          </div>
-                          <div class="">
-                              <input class="submit" type="submit" name="submit" placeholder="Submit">
-                          </div>
-                      </form> 
-                    </div>
+                    <a href="../dokter/dokter.php?layanan=<?=$layanan?>">Dokter</a>
                 </div>
             </div> 
             <div class="line-content">
@@ -78,39 +60,37 @@
             </div> 
             <div class="doctors">
                 <h2>Pilih Dokter</h2>
-                <a class="doctor" href="#">
-                  <img src="../../assets/doctor/doctor1.jpg" alt="">
-                  <h4>dr. Andika Surya Rahmad</h4>
-                </a>
-                <a class="doctor" href="#">
-                  <img src="../../assets/doctor/doctor1.jpg" alt="">
-                  <h4>dr. Andika Surya Rahmad</h4>
-                </a>
-                <a class="doctor" href="#">
-                  <img src="../../assets/doctor/doctor1.jpg" alt="">
-                  <h4>dr. Andika Surya Rahmad</h4>
-                </a>
-                <a class="doctor" href="#">
-                  <img src="../../assets/doctor/doctor1.jpg" alt="">
-                  <h4>dr. Andika Surya Rahmad</h4>
-                </a>
-                <a class="doctor" href="#">
-                  <img src="../../assets/doctor/doctor1.jpg" alt="">
-                  <h4>dr. Andika Surya Rahmad</h4>
-                </a>
-                <a class="doctor" href="#">
-                  <img src="../../assets/doctor/doctor1.jpg" alt="">
-                  <h4>dr. Andika Surya Rahmad</h4>
-                </a>
-                <a class="doctor" href="#">
-                  <img src="../../assets/doctor/doctor1.jpg" alt="">
-                  <h4>dr. Andika Surya Rahmad</h4>
-                </a>
-            </div>    
+                <?php
+                foreach($dokters as $dokters){
+                  if ($dokters["layanan"] === $layanan){
+                    if (count($dokterIsi)>0){
+                      $nDokter = count($dokter);
+                      $iDokter = 0;
+                      if ($iDokter<$nDokter){
+                        if ($dokters["id"] != $dokter[$iDokter]){
+                          ?>
+                          <a class="doctor" href="../form_daftar/konfirmasi.php?layanan=<?=$layanan?>&tgl=<?=$tgl;?>&jam=<?=$jam;?>&dokter=<?=$dokters["nama"]?>">
+                            <img src="../../assets/doctor/<?=$dokters["img"]?>" alt="">
+                            <h4><?=$dokters["nama"]?></h4>
+                          </a>
+                          <?php
+                          $iDokter++;
+                        }
+                      }
+                    } else {
+                      ?>
+                      <a class="doctor" href="../form_daftar/konfirmasi.php?layanan=<?=$layanan?>&tgl=<?=$tgl;?>&jam=<?=$jam;?>&dokter=<?=$dokters["nama"]?>">
+                        <img src="../../assets/doctor/<?=$dokters["img"]?>" alt="">
+                        <h4><?=$dokters["nama"]?></h4>
+                      </a>
+                      <?php
+                    }
+                  }
+                }
+                ?>
+            </div>  
         </div>
     </div>
-
-
     
     <footer>
       <div class="container">

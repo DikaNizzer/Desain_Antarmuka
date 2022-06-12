@@ -46,6 +46,7 @@ header {
   z-index: 10;
   background-image: url('../assets/bg/bg1.png');
   background-size: cover;
+  font-family: 'Inter', sans-serif;
 }
 
 .header-right hr {
@@ -62,6 +63,7 @@ header {
   margin-left: 40px;
   margin-top: 30px;
   color: white;
+  font-size: 12px;
 }
 
 .header-right {
@@ -76,6 +78,8 @@ header {
   display: block;
   float: left;
   transition: all 0.5s;
+  font-size: 16px;
+  letter-spacing: 1px;
 }
 
 .header-right a:hover {
@@ -218,6 +222,7 @@ margin-bottom: 1px;
 .content {
   padding-top: 150px;
   color: white;
+  font-family: 'Inter', sans-serif;
 }
 
 .tab {
@@ -232,6 +237,8 @@ margin-bottom: 1px;
   transition: all 0.5s;
   border-radius: 30px;
   font-weight: bold;
+  font-size: 20px;
+  text-transform: uppercase;
   padding: 10px 40px;
 }
 
@@ -323,6 +330,7 @@ margin-bottom: 1px;
   font-weight: bold;
   padding: 5px 40px;
   margin-left: -40px;
+  border: none;
 }
 
 .dates {
@@ -361,7 +369,7 @@ margin-bottom: 1px;
   text-align: center;
 }
 
-.time a {
+.waktu-normal {
   padding: 15px 25px;
   font-weight: bolder;
   color: rgba(0,43,125,1.00);
@@ -371,6 +379,19 @@ margin-bottom: 1px;
   border-style: solid;
   border-width: medium;
   border-color: rgba(0,43,125,1.00);
+}
+
+.waktu-red {
+  padding: 15px 25px;
+  font-weight: bolder;
+  color: #fff;
+  width: 15%;
+  margin: 15px 5px;
+  display: inline-block;
+  border-style: solid;
+  border-width: medium;
+  border-color: #C00303;
+  background-color: #C00303;
 }
 
 /* Pilihan Dokter / Jadwal */

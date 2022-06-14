@@ -106,6 +106,40 @@ input[type=submit]:hover {
         -ms-transform: translate(-50%, -50%);
         -webkit-transform: translate(-50%, -50%);
       }
+
+      /* CEK DATA */
+      /* CSS MODAL */
+#cekdata {
+        visibility: hidden;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        z-index: 1000;
+      }
+      #cekdata div {
+        width: 600px;
+        height: 300px;
+        margin: 150px auto;
+        background-color: #f2f2f2;
+        border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border: 1px solid #666666;
+        padding: 15px;
+        text-align: center;
+        font-weight: bold;
+        font-size: 15px;
+        border: 3px solid #cccccc;
+        position: absolute;
+        left: 50%;
+        top: 100px;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+      }
 </style>
 </head>
     <body>
@@ -137,7 +171,7 @@ input[type=submit]:hover {
 
         
         <div class="container">
-            <form action="" method="POST">
+            <form action="#" method="POST">
                 <div class="row">
                     <div class="col-25">
                         <label for="nik">NIK</label>
@@ -205,9 +239,9 @@ input[type=submit]:hover {
                 <!-- <a href="../poli/poli.php"><center><input type="submit" value="Daftar"></center></a> -->
                 <center><input type="submit" value="periksa" name="Submit"></center>
             <!-- </div> -->
-            </form>
+            
         </div>
-        
+        </form>
         
         <a href='#' onclick='example()'>open</a>
         <div id="example">
@@ -223,22 +257,36 @@ input[type=submit]:hover {
                 }
             </script>
         </div>
+
+        <a href='#' onclick='cekdata()'>Cek Data</a>
+        <div id="cekdata">
+            <div>
+                <h2><b>Pastikan Data Yang Anda Masukkan Telah benar !</b></h2>
+                <center><img src='../../assets/bg/folder.png' style="width:200px; height:200px; align:center; position:relative;"></center>
+                <h3><a href='../poli/poli.php'>Daftar</a></h3>
+            </div>
+            <script>
+                function cekdata() {
+                el = document.getElementById("cekdata");
+                el.style.visibility = (el.style.visibility == "visible") ? "hidden" : "visible";
+                }
+            </script>
+        </div>
         
 
         
     </body>
 </html>
 
-<!-- 
+
 <?php
 
-if(isset($_POST['Submit'])){
-    $nik = $_POST['nik'];
-    $nama = strtolower ($_POST['nama']);
-    $no = $_POST['no'];
 
-    var_dump($nik);
-    exit;
+if(isset($_POST['Submit'])){
+    
+    $nik = $_POST['nik'];
+    
+
     $cekid = mysqli_query($koneksi, "SELECT * FROM desmuk.pendaftaran where `NIK` = '$nik' ");
     //cek id,  idnya ada tidak
     if( mysqli_num_rows($cekid) === 1){
@@ -246,28 +294,22 @@ if(isset($_POST['Submit'])){
         //cek paswword
         $user = mysqli_fetch_assoc($cekid);
 
-        if( $user['NAMA'] == $nama ){
-
-            // Kalau NIK dan Nama Cocok
-            echo "<script> 
-            alert('Data Ditemukan');
-            
-            </script>";
-        }else{
+        
+            // Kalau NIK Ada DI pendaftaran
             echo "<script> 
             example();
             
             </script>";
+        }else{
+            echo "<script> 
+            
+            document.location.href = '../poli/poli.php';
+            
+            </script>";
             
         }
-    }else{
-        echo "<script> 
-        
-        example();
-        </script>";
-    }
+    
 }
 
 
-
-?> -->
+?> 

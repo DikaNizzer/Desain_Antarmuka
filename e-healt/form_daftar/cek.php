@@ -221,6 +221,7 @@ if(isset($_POST['Submit'])){
 
             // Kalau NIK dan Nama Cocok
             echo "<script> 
+            alert('Data Ditemukan');
             document.location.href = 'verifikasi.php';
             </script>";
         }else{

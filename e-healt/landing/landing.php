@@ -36,7 +36,7 @@
         <img src="../../assets/bg/calendar.png" style="height:240px"/>
         <p>Batalkan Data Pendaftaran <br>Anda</p>
 
-        <button class="">Batalkan</button>
+        <a href="../batal_daftar/hapus_pendaftaran_nik.php"><button class="">Batalkan</button></a>
         </div>
 
 

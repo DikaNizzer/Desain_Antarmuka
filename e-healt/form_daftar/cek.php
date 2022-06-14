@@ -186,9 +186,9 @@ input[type=submit]:hover {
         <a href='#' onclick='example()'>open</a>
         <div id="example">
             <div>
-                <h3>Data Tidak Ditemukan !</h3>
+                <h2><b>Data Tidak Ditemukan !</b></h2>
                 <center><img src='../../assets/bg/folder.png' style="width:200px; height:200px; align:center; position:relative;"></center>
-                <a href='#' onclick='example()'>Tutup</a>
+                <h3><a href='#' onclick='example()'>Tutup</a></h3>
             </div>
             <script>
                 function example() {

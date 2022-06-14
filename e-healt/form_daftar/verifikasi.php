@@ -137,7 +137,7 @@ input[type=submit]:hover {
 
         
         <div class="container">
-            <!-- <form> -->
+            <form action="" method="POST">
                 <div class="row">
                     <div class="col-25">
                         <label for="nik">NIK</label>
@@ -202,13 +202,27 @@ input[type=submit]:hover {
 
         <br>
             <!-- <div class="row"> -->
-                <a href="../poli/poli.php"><center><input type="submit" value="Daftar"></center></a>
+                <!-- <a href="../poli/poli.php"><center><input type="submit" value="Daftar"></center></a> -->
+                <center><input type="submit" value="periksa" name="Submit"></center>
             <!-- </div> -->
-            <!-- </form> -->
+            </form>
         </div>
         
         
-
+        <a href='#' onclick='example()'>open</a>
+        <div id="example">
+            <div>
+                <h2><b>Anda Masih Memiliki Layanan Yang Terdaftar !</b></h2>
+                <center><img src='../../assets/bg/folder.png' style="width:200px; height:200px; align:center; position:relative;"></center>
+                <h3><a href='#' onclick='example()'>Tutup</a></h3>
+            </div>
+            <script>
+                function example() {
+                el = document.getElementById("example");
+                el.style.visibility = (el.style.visibility == "visible") ? "hidden" : "visible";
+                }
+            </script>
+        </div>
         
 
         
@@ -223,7 +237,9 @@ if(isset($_POST['Submit'])){
     $nama = strtolower ($_POST['nama']);
     $no = $_POST['no'];
 
-    $cekid = mysqli_query($koneksi, "SELECT * from pasien where `NIK` = '$nik' ");
+    var_dump($nik);
+    exit;
+    $cekid = mysqli_query($koneksi, "SELECT * FROM desmuk.pendaftaran where `NIK` = '$nik' ");
     //cek id,  idnya ada tidak
     if( mysqli_num_rows($cekid) === 1){
 
@@ -234,7 +250,7 @@ if(isset($_POST['Submit'])){
 
             // Kalau NIK dan Nama Cocok
             echo "<script> 
-            alert('Data SAMA');
+            alert('Data Ditemukan');
             
             </script>";
         }else{

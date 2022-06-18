@@ -247,7 +247,7 @@ input[type=submit]:hover {
         <div id="example">
             <div>
                 <h2><b>Anda Masih Memiliki Layanan Yang Terdaftar !</b></h2>
-                <center><img src='../../assets/bg/folder.png' style="width:200px; height:200px; align:center; position:relative;"></center>
+                <center><img src='../../assets/bg/sudah.png' style="width:200px; height:200px; align:center; position:relative;"></center>
                 <h3><a href='#' onclick='example()'>Tutup</a></h3>
             </div>
             <script>
@@ -262,7 +262,7 @@ input[type=submit]:hover {
         <div id="cekdata">
             <div>
                 <h2><b>Pastikan Data Yang Anda Masukkan Telah benar !</b></h2>
-                <center><img src='../../assets/bg/folder.png' style="width:200px; height:200px; align:center; position:relative;"></center>
+                <center><img src='../../assets/bg/data.png' style="width:200px; height:200px; align:center; position:relative;"></center>
                 <h3><a href='../poli/poli.php'>Daftar</a></h3>
             </div>
             <script>
@@ -288,11 +288,11 @@ if(isset($_POST['Submit'])){
     
 
     $cekid = mysqli_query($koneksi, "SELECT * FROM desmuk.pendaftaran where `NIK` = '$nik' ");
+    // var_dump(mysqli_num_rows($cekid));
+    //     exit;
     //cek id,  idnya ada tidak
-    if( mysqli_num_rows($cekid) === 1){
-
-        //cek paswword
-        $user = mysqli_fetch_assoc($cekid);
+    if( mysqli_num_rows($cekid) >= 1){
+        
 
         
             // Kalau NIK Ada DI pendaftaran

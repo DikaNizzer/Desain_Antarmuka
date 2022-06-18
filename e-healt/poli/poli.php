@@ -182,9 +182,9 @@
         <center><h1>Poli</h1></center>
         <br>
 
-        <div class="container">
-			<div class="wrap">
-	          	<div class="box one">
+        <a href="../dokter/dokter.php?layanan=umum"><div class="container">
+			 <div class="wrap">
+			<div class="box one">
 		        	<h1>Umum</h1>
 	          	</div>
           	</div> 
@@ -233,7 +233,7 @@
 		    		<h1>Rehab</h1>
 	          	</div>
           	</div>
-        </div>
+        </div></a>
 
     </body>
 </html>

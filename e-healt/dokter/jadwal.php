@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Progate</title>
+    <title>E - Healt</title>
     <link rel="stylesheet" href="../../assets/stylesheet.css">
     <link rel="stylesheet" href="responsive.css">
     <script src="../../assets/jquery-3.6.0.min.js"></script>

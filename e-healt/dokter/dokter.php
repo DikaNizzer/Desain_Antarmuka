@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Progate</title>
+    <title>E - Healt</title>
     <link rel="stylesheet" href="../../assets/stylesheet.css">
     <link rel="stylesheet" href="responsive.css">
   </head>
@@ -61,13 +61,5 @@
         </div>
     </div>
 
-
-    
-    <footer>
-      <div class="container">
-        <img src="https://prog-8.com/images/html/advanced/footer_logo.png">
-        <p>Learn to code, learn to be creative.</p>
-      </div>
-    </footer>
   </body>
 </html>

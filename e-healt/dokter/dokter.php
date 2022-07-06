@@ -1,8 +1,3 @@
-<?php
-include '../method.php';
-$layanan = $_GET["layanan"];
-?>
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -35,7 +30,7 @@ $layanan = $_GET["layanan"];
         <div class="container">
             <div class="tabs">
             <div class="tab">
-                    <a href="../jadwal/jadwal.php?layanan=<?=$layanan?>">Jadwal</a>
+                    <a href="../jadwal/jadwal.php">Jadwal</a>
                 </div>
                 <div class="tab">
                     <a href="#">Dokter</a>
@@ -46,18 +41,22 @@ $layanan = $_GET["layanan"];
             </div> 
             <div class="doctors">
                 <h2>Pilih Dokter</h2>
-                <?php
-                foreach($dokters as $dokters){
-                  if($dokters["layanan"] === $layanan){
-                    ?>
-                    <a class="doctor" href="jadwal.php?layanan=<?=$layanan?>&dokter=<?=$dokters["nama"]?>">
-                      <img src="../../assets/doctor/<?=$dokters["img"]?>" alt="">
-                      <h4><?=$dokters["nama"]?></h4>
-                    </a>
-                    <?php
-                  }
-                }
-                ?>
+                <a class="doctor" href="jadwal.php">
+                  <img src="../../assets/doctor/doctor1.jpg" alt="">
+                  <h4>dr. Andika Surya Rahmad</h4>
+                </a>
+                <a class="doctor" href="jadwal.php">
+                  <img src="../../assets/doctor/doctor1.jpg" alt="">
+                  <h4>dr. Afif Raihan Z., Sp.OG.</h4>
+                </a>
+                <a class="doctor" href="jadwal.php">
+                  <img src="../../assets/doctor/doctor2.jpg" alt="">
+                  <h4>drg. Annisa Aristawati</h4>
+                </a>
+                <a class="doctor" href="jadwal.php">
+                  <img src="../../assets/doctor/doctor1.jpg" alt="">
+                  <h4>dr. M. Hilmi Zain, Sp.A.</h4>
+                </a>
             </div>  
         </div>
     </div>

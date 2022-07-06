@@ -1,21 +1,3 @@
-<?php
-include '../method.php';
-$layanan = $_GET["layanan"];
-$tgl = $_GET['tgl'];
-$jam = $_GET['jam'];
-
-$dokterIsi = query("SELECT dokter FROM pendaftaran WHERE tgl_daftar = '$tgl'");
-
-if (count($dokterIsi)>0){
-  $a = 0;
-  foreach ($dokterIsi as $dokterIsi){
-    $dokter[$a] = $dokterIsi["dokter"];
-    $a++;
-  }
-  //$waktu = implode("','", $waktu  );
-  //$jamBiru = query("SELECT jam FROM jam WHERE jam NOT IN ($waktu)");
-  //$jamMerah = query("SELECT jam FROM jam WHERE jam IN ($waktu)");
-}
 ?>
 <!DOCTYPE html>
 <html>
@@ -49,10 +31,10 @@ if (count($dokterIsi)>0){
         <div class="container">
             <div class="tabs">
                 <div class="tab">
-                    <a href="../jadwal/jadwal.php?layanan=<?=$layanan?>">Jadwal</a>
+                    <a href="../jadwal/jadwal.php">Jadwal</a>
                 </div>
                 <div class="tab">
-                    <a href="../dokter/dokter.php?layanan=<?=$layanan?>">Dokter</a>
+                    <a href="../dokter/dokter.php">Dokter</a>
                 </div>
             </div> 
             <div class="line-content">
@@ -60,34 +42,22 @@ if (count($dokterIsi)>0){
             </div> 
             <div class="doctors">
                 <h2>Pilih Dokter</h2>
-                <?php
-                foreach($dokters as $dokters){
-                  if ($dokters["layanan"] === $layanan){
-                    if (count($dokterIsi)>0){
-                      $nDokter = count($dokter);
-                      $iDokter = 0;
-                      if ($iDokter<$nDokter){
-                        if ($dokters["id"] != $dokter[$iDokter]){
-                          ?>
-                          <a class="doctor" href="../form_daftar/konfirmasi.php?layanan=<?=$layanan?>&tgl=<?=$tgl;?>&jam=<?=$jam;?>&dokter=<?=$dokters["nama"]?>">
-                            <img src="../../assets/doctor/<?=$dokters["img"]?>" alt="">
-                            <h4><?=$dokters["nama"]?></h4>
-                          </a>
-                          <?php
-                          $iDokter++;
-                        }
-                      }
-                    } else {
-                      ?>
-                      <a class="doctor" href="../form_daftar/konfirmasi.php?layanan=<?=$layanan?>&tgl=<?=$tgl;?>&jam=<?=$jam;?>&dokter=<?=$dokters["nama"]?>">
-                        <img src="../../assets/doctor/<?=$dokters["img"]?>" alt="">
-                        <h4><?=$dokters["nama"]?></h4>
-                      </a>
-                      <?php
-                    }
-                  }
-                }
-                ?>
+                <a class="doctor" href="../form_daftar/konfirmasi.php">
+                  <img src="../../assets/doctor/doctor1.jpg" alt="">
+                  <h4>dr. Andika Surya Rahmad</h4>
+                </a>
+                <a class="doctor" href="../form_daftar/konfirmasi.php">
+                  <img src="../../assets/doctor/doctor1.jpg" alt="">
+                  <h4>dr. Afif Raihan Z., Sp.OG.</h4>
+                </a>
+                <a class="doctor" href="../form_daftar/konfirmasi.php">
+                  <img src="../../assets/doctor/doctor2.jpg" alt="">
+                  <h4>drg. Annisa Aristawati</h4>
+                </a>
+                <a class="doctor" href="../form_daftar/konfirmasi.php">
+                  <img src="../../assets/doctor/doctor1.jpg" alt="">
+                  <h4>dr. M. Hilmi Zain, Sp.A.</h4>
+                </a>
             </div>  
         </div>
     </div>

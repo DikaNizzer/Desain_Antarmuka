@@ -15,7 +15,7 @@
 	font-family: 'Roboto', sans-serif;
 }
 
-.container {
+.dua{
 	width: 100%;
 	height: 500px;
 }
@@ -182,58 +182,69 @@
         <center><h1>Poli</h1></center>
         <br>
 
+<<<<<<< Updated upstream
         <a href="../dokter/dokter.php?layanan=umum"><div class="container">
 			 <div class="wrap">
 			<div class="box one">
+=======
+        <div class="container dua">
+			<a href="../dokter/dokter.php?layanan=umum" class="wrap">
+	          	<div class="box one">
+>>>>>>> Stashed changes
 		        	<h1>Umum</h1>
 	          	</div>
-          	</div> 
-          	<div class="wrap">
-			  <div class="box two">
-			  <h1>Gigi</h1>
+          	</a> 
+			<a href="../dokter/dokter.php?layanan=gigi" class="wrap">
+	          	<div class="box two">
+		        	<h1>Gigi</h1>
 	          	</div>
-          	</div>
-          	<div class="wrap">
+          	</a> 
+			  <a href="../dokter/dokter.php?layanan=kia" class="wrap">
 	          	<div class="box three">
-		    		<h1>KIA</h1>
+		        	<h1>KIA</h1>
 	          	</div>
-          	</div>
-			<div class="wrap">
+          	</a> 
+			  <a href="#" class="wrap">
 	          	<div class="box four">
-		    		<h1>Gizi</h1>
+		        	<h1>Gizi</h1>
 	          	</div>
-          	</div>
-			<div class="wrap">
+          	</a> 
+			  <a href="#" class="wrap">
 	          	<div class="box five">
-		    		<h1>Anak</h1>
+		        	<h1>Anak</h1>
 	          	</div>
-          	</div>
-			  <div class="wrap">
+          	</a> 
+			  <a href="#" class="wrap">
 	          	<div class="box six">
-		    		<h1>Batra</h1>
+		        	<h1>Batra</h1>
 	          	</div>
-          	</div>
-			<div class="wrap">
+          	</a> 
+			<a href="#" class="wrap">
 	          	<div class="box seven">
-		    		<h1>Jantung</h1>
+		        	<h1>Jantung</h1>
 	          	</div>
-          	</div>
-			<div class="wrap">
+          	</a> 
+			  <a href="#" class="wrap">
 	          	<div class="box eight">
-		    		<h1>THT</h1>
+		        	<h1>THT</h1>
 	          	</div>
-          	</div>
-			<div class="wrap">
+          	</a> 
+			  <a href="#" class="wrap">
 	          	<div class="box nine">
-		    		<h1>Mata</h1>
+		        	<h1>Mata</h1>
 	          	</div>
-          	</div>
-			<div class="wrap">
+          	</a> 
+			  <a href="#" class="wrap">
 	          	<div class="box ten">
-		    		<h1>Rehab</h1>
+		        	<h1>Rehab</h1>
 	          	</div>
+<<<<<<< Updated upstream
           	</div>
         </div></a>
+=======
+          	</a> 
+        </div>
+>>>>>>> Stashed changes
 
     </body>
 </html>

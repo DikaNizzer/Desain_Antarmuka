@@ -209,6 +209,9 @@ if(isset($_POST['Submit'])){
     $nik = $_POST['nik'];
     $nama = strtolower ($_POST['nama']);
     $no = $_POST['no'];
+    // var_dump($nik);
+    // var_dump($nama);
+    // exit;
 
     $cekid = mysqli_query($koneksi, "SELECT * from pasien where `NIK` = '$nik' ");
     //cek id,  idnya ada tidak

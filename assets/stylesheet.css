@@ -359,14 +359,23 @@ margin-bottom: 1px;
   color: white;
 }
 
+.date a.active {
+  background-color: rgba(0,43,125,1.00);
+  color: white;
+}
+
 .times {
   margin-top: 40px;
   text-align: center;
 }
 
-.time {
-  display: inline;
+.time.active {
+  display: inline-block;
   text-align: center;
+}
+
+.time {
+  display: none;
 }
 
 .waktu-normal {

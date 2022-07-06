@@ -33,7 +33,7 @@ $dokters = array(
     ),
     array(
         "id" => "3",
-        "layanan" => "anak",
+        "layanan" => "gigi",
         "nama" => "dr. M. Hilmi Zain, Sp.A.",
         "img" => "doctor1.jpg"
     ),

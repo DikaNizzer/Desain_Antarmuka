@@ -1,57 +1,3 @@
-<?php
-include '../method.php';
-$layanan = $_GET["layanan"];
-$dokter = $_GET['dokter'];
-$tgl = date('Y-m-d');
-$day = date('D', strtotime($tgl));
-$dayList = array(
-    'Sun' => 'Minggu',
-    'Mon' => 'Senin',
-    'Tue' => 'Selasa',
-    'Wed' => 'Rabu',
-    'Thu' => 'Kamis',
-    'Fri' => 'Jumat',
-    'Sat' => 'Sabtu'
-);
-$hariIni = $dayList[$day];
-if (isset($_GET['dokter']) && isset($_GET['tgl'])){
-  $dokter = $_GET['dokter'];
-  $tgl = $_GET['tgl'];
-  $day = date('D', strtotime($tgl));
-  $dayList = array(
-      'Sun' => 'Minggu',
-      'Mon' => 'Senin',
-      'Tue' => 'Selasa',
-      'Wed' => 'Rabu',
-      'Thu' => 'Kamis',
-      'Fri' => 'Jumat',
-      'Sat' => 'Sabtu'
-  );
-  $hariIni = $dayList[$day];
-}
-
-$idDokter = 0;
-
-foreach($dokters as $dokters){
-  if($dokters["nama"] === $dokter){
-    $idDokter = $dokters["id"];
-  }
-}
-
-$waktuIsi = query("SELECT jam FROM pendaftaran WHERE tgl_daftar = '$tgl' AND dokter = '$idDokter'");
-
-if (count($waktuIsi)>0){
-  $a = 0;
-  foreach ($waktuIsi as $waktuIsi){
-    $waktu[$a] = $waktuIsi["jam"];
-    $a++;
-  }
-  //$waktu = implode("','", $waktu  );
-  //$jamBiru = query("SELECT jam FROM jam WHERE jam NOT IN ($waktu)");
-  //$jamMerah = query("SELECT jam FROM jam WHERE jam IN ($waktu)");
-}
-?>
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -60,6 +6,7 @@ if (count($waktuIsi)>0){
     <title>Progate</title>
     <link rel="stylesheet" href="../../assets/stylesheet.css">
     <link rel="stylesheet" href="responsive.css">
+    <script src="../../assets/jquery-3.6.0.min.js"></script>
   </head>
   <body>
     <header>
@@ -84,118 +31,107 @@ if (count($waktuIsi)>0){
         <div class="container">
             <div class="tabs">
                 <div class="tab">
-                    <a href="../jadwal/jadwal.php?layanan=<?=$layanan?>">Jadwal</a>
+                    <a href="../jadwal/jadwal.php">Jadwal</a>
                 </div>
                 <div class="tab">
-                    <a href="../dokter/dokter.php?layanan=<?=$layanan?>">Dokter</a>
+                    <a href="../dokter/dokter.php">Dokter</a>
                 </div>
             </div> 
             <div class="line-content">
                 <hr>
             </div> 
             <div class="dates">
-                <?php
-                function tgl_indo($tanggal){
-                  $bulan = array (
-                    1 =>   'Januari',
-                    'Februari',
-                    'Maret',
-                    'April',
-                    'Mei',
-                    'Juni',
-                    'Juli',
-                    'Agustus',
-                    'September',
-                    'Oktober',
-                    'November',
-                    'Desember'
-                  );
-                  $pecahkan = explode('-', $tanggal);
-                  
-                  // variabel pecahkan 0 = tanggal
-                  // variabel pecahkan 1 = bulan
-                  // variabel pecahkan 2 = tahun
-                 
-                  return $pecahkan[2] . ' ' . $bulan[ (int)$pecahkan[1] ] . ' ' . $pecahkan[0];
-                }
-                $tanggal = tgl_indo(date('Y-m-d'));
-                for ($i=0; $i<7; $i++){
-                    $tanggalAsli = date('Y-m-d', strtotime($tanggal));
-                    $day = date('D', strtotime($tanggal));
-                    $dayList = array(
-                        'Sun' => 'Minggu',
-                        'Mon' => 'Senin',
-                        'Tue' => 'Selasa',
-                        'Wed' => 'Rabu',
-                        'Thu' => 'Kamis',
-                        'Fri' => 'Jumat',
-                        'Sat' => 'Sabtu'
-                    );
-                ?>
                 <div class="date">
-                    <a href="jadwal.php?layanan=<?=$layanan;?>&dokter=<?=$dokter;?>&tgl=<?=$tanggalAsli;?>">
-                        <p class="hari"><?= $dayList[$day] ?></p>
-                        <p class="tanggal"><?= $tanggal ?></p>
+                    <a class="active" data-id='1' href="#">
+                        <p class="hari">Rabu</p>
+                        <p class="tanggal">6 Juli 2022</p>
                     </a>
                 </div> 
-                <?php
-                $tanggal = tgl_indo(date('Y-m-d', strtotime('+1 days', strtotime($tanggal))));
-                }
-                ?>
+                <div class="date">
+                    <a data-id='1' href="#">
+                        <p class="hari">Kamis</p>
+                        <p class="tanggal">7 Juli 2022</p>
+                    </a>
+                </div> 
+                <div class="date">
+                    <a data-id='1' href="#">
+                        <p class="hari">Jum'at</p>
+                        <p class="tanggal">8 Juli 2022</p>
+                    </a>
+                </div> 
+                <div class="date">
+                    <a data-id='1' href="#">
+                        <p class="hari">Sabtu</p>
+                        <p class="tanggal">9 Juli 2022</p>
+                    </a>
+                </div> 
+                <div class="date">
+                    <a data-id='2' href="#">
+                        <p class="hari">Minggu</p>
+                        <p class="tanggal">10 Juli 2022</p>
+                    </a>
+                </div> 
+                <div class="date">
+                    <a data-id='1' href="#">
+                        <p class="hari">Senin</p>
+                        <p class="tanggal">11 Juli 2022</p>
+                    </a>
+                </div> 
+                <div class="date">
+                    <a data-id='1' href="#">
+                        <p class="hari">Selasa</p>
+                        <p class="tanggal">12 Juli 2022</p>
+                    </a>
+                </div> 
             </div>
             <div class="times">
-                <div class="time">
-                    <?php
-                    $nJam = count($jam);
-                    if ($hariIni === "Minggu"){
-                      for ($i=0; $i<$nJam; $i++){
-                        ?>  
-                          <a class="waktu-red" href="#"><?=$jam[$i];?></a>
-                        <?php
-                      } 
-                    } else if (count($waktuIsi)>0){
-                      $nWaktu = count($waktu);
-                      $iWaktu=0;
-                      $i=0;
-                      while($i<$nJam){
-                        if($iWaktu<$nWaktu){
-                          if($jam[$i] === $waktu[$iWaktu]){
-                            ?>  
-                              <a class="waktu-red" href="#"><?=$jam[$i];?></a>
-                            <?php
-                            $iWaktu++;
-                          } else {
-                            ?>  
-                              <a class="waktu-normal" href="../form_daftar/konfirmasi.php?layanan=<?=$layanan;?>&dokter=<?=$dokter;?>&tgl=<?=$tgl;?>&jam=<?=$jam[$i];?>"><?=$jam[$i];?></a>
-                            <?php
-                          }
-                        } else {
-                          ?>  
-                            <a class="waktu-normal" href="../form_daftar/konfirmasi.php?layanan=<?=$layanan;?>&dokter=<?=$dokter;?>&tgl=<?=$tgl;?>&jam=<?=$jam[$i];?>"><?=$jam[$i];?></a>
-                          <?php
-                        }
-                        $i++;
-                      }
-                    } else {
-                      for ($i=0; $i<$nJam; $i++){
-                        ?>  
-                          <a class="waktu-normal" href="../form_daftar/konfirmasi.php?layanan=<?=$layanan;?>&dokter=<?=$dokter;?>&tgl=<?=$tgl;?>&jam=<?=$jam[$i];?>"><?=$jam[$i];?></a>
-                        <?php
-                      } 
-                    }
-                    ?>
+                <div class="time active" id="time" data-content="1">
+                    <a id="waktu" class="waktu-red" href="#">05.30</a>
+                    <a id="waktu" class="waktu-normal" href="../form_daftar/konfirmasi.php">06.00</a>
+                    <a id="waktu" class="waktu-normal" href="../form_daftar/konfirmasi.php">06.30</a>
+                    <a id="waktu" class="waktu-normal" href="../form_daftar/konfirmasi.php">07.00</a>
+                    <a id="waktu" class="waktu-normal" href="../form_daftar/konfirmasi.php">07.30</a>
+                    <a id="waktu" class="waktu-normal" href="../form_daftar/konfirmasi.php">08.00</a>
+                    <a id="waktu" class="waktu-red" href="#">17.00</a>
+                    <a id="waktu" class="waktu-normal" href="../form_daftar/konfirmasi.php">17.30</a>
+                    <a id="waktu" class="waktu-normal" href="../form_daftar/konfirmasi.php">18.30</a>
+                    <a id="waktu" class="waktu-normal" href="../form_daftar/konfirmasi.php">19.00</a>
+                    <a id="waktu" class="waktu-normal" href="../form_daftar/konfirmasi.php">19.30</a>
+                    <a id="waktu" class="waktu-normal" href="../form_daftar/konfirmasi.php">20.00</a>
+                </div>
+                <div class="time" id="time" data-content="2">
+                    <a id="waktu" class="waktu-red" href="#">05.30</a>
+                    <a id="waktu" class="waktu-red" href="#">06.00</a>
+                    <a id="waktu" class="waktu-red" href="#">06.30</a>
+                    <a id="waktu" class="waktu-red" href="#">07.00</a>
+                    <a id="waktu" class="waktu-red" href="#">07.30</a>
+                    <a id="waktu" class="waktu-red" href="#">08.00</a>
+                    <a id="waktu" class="waktu-red" href="#">17.00</a>
+                    <a id="waktu" class="waktu-red" href="#">17.30</a>
+                    <a id="waktu" class="waktu-red" href="#">18.30</a>
+                    <a id="waktu" class="waktu-red" href="#">19.00</a>
+                    <a id="waktu" class="waktu-red" href="#">19.30</a>
+                    <a id="waktu" class="waktu-red" href="#">20.00</a>
                 </div>
             </div>  
         </div>
     </div>
-    
-    <?php //var_dump($jamMerah); ?>
-    
-    <footer>
-      <div class="container">
-        <img src="https://prog-8.com/images/html/advanced/footer_logo.png">
-        <p>Learn to code, learn to be creative.</p>
-      </div>
-    </footer>
+
+    <script>
+
+      $(".date a").click(function(){
+        const id = $(this).data('id');
+        if(!$(this).hasClass('active')){
+          $(".date a").removeClass('active');
+          $(this).addClass('active');
+          
+          $('.time').hide();
+          $(`[data-content=${id}]`).show();
+        }
+      });
+
+      
+    </script>
+
   </body>
 </html>

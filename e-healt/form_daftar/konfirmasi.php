@@ -224,13 +224,9 @@ input[type=submit]:hover {
         <center>
           <a href="verifikasi.php">
             <input type="submit" value="Belum"> 
-            
-
-          <!-- <a href="konfirmasi.php"><button>Belum</button></a> -->
 
           <a href="buktidaftar.php">
             <input type="submit" value="Sudah">    
-               
         </center>
     </div>
 

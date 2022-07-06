@@ -147,7 +147,11 @@ input[type=submit]:hover {
             </div>
           </div>
         </div>
-        <br><br><center><input type="submit" value="Cetak" name="Cetak"></center>
+        <br><br>
+        
+        <center>
+          <input type="submit" value="Cetak" name="Cetak">
+        </center>
 
     </body>
 </html>

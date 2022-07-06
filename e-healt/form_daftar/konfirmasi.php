@@ -130,7 +130,6 @@ input[type=submit]:hover {
 
         
         <div class="container">
-          <form action="">
             <div class="row">
               <div class="col-25">
                 <label for="nik">NIK</label>
@@ -222,10 +221,20 @@ input[type=submit]:hover {
         </div>
 
         <br>
-        <center><input type="submit" value="Belum" name="Belum">
-        <input type="submit" value="Sudah" name="Sudah"></center>
-      </form>
+        <center>
+          <a href="verifikasi.php">
+            <input type="submit" value="Belum"> 
+            
+
+          <!-- <a href="konfirmasi.php"><button>Belum</button></a> -->
+
+          <a href="buktidaftar.php">
+            <input type="submit" value="Sudah">    
+               
+        </center>
     </div>
 
     </body>
 </html>
+
+

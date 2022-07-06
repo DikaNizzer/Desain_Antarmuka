@@ -38,7 +38,7 @@ input[type=submit] {
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  margin-bottom: 25px;;
+  margin-bottom: 2px;;
 }
 
 input[type=submit]:hover {
@@ -86,8 +86,8 @@ input[type=submit]:hover {
         z-index: 1000;
       }
       #example div {
-        width: 600px;
-        height: 300px;
+        width: 400px;
+        height: 250px;
         margin: 150px auto;
         background-color: #f2f2f2;
         border-radius: 10px;
@@ -120,8 +120,8 @@ input[type=submit]:hover {
         z-index: 1000;
       }
       #cekdata div {
-        width: 600px;
-        height: 300px;
+        width: 400px;
+        height: 280px;
         margin: 150px auto;
         background-color: #f2f2f2;
         border-radius: 10px;
@@ -235,19 +235,22 @@ input[type=submit]:hover {
         </div>
 
         <br>
-            <!-- <div class="row"> -->
-                <!-- <a href="../poli/poli.php"><center><input type="submit" value="Daftar"></center></a> -->
-                <center><input type="submit" value="periksa" name="Submit"></center>
-            <!-- </div> -->
-            
+                <center><input type="submit" value="Periksa" name="submit"></center>
+                <center><p style="color:red; font-style: oblique; margin-bottom:10px">Skenario Jika sudah pernah daftar</p></center>
+
+                <center><input type="submit" value="Periksa" name="gagal"></center>
+                <center><p style="color:red; font-style: oblique;">Skenario Bisa Mendaftar</p></center>
+
+                <!-- <a href='#' onclick='cekdata()'>Cek Data</a>
+                <p style="color:red; font-style: oblique;">Skenario Jika sudah pernah daftar</p> -->
         </div>
         </form>
         
-        <a href='#' onclick='example()'>open</a>
+
         <div id="example">
             <div>
                 <h2><b>Anda Masih Memiliki Layanan Yang Terdaftar !</b></h2>
-                <center><img src='../../assets/bg/sudah.png' style="width:200px; height:200px; align:center; position:relative;"></center>
+                <center><img src='../../assets/bg/sudah.png' style="width:150px; height:150px; align:center; position:relative;"></center>
                 <h3><a href='#' onclick='example()'>Tutup</a></h3>
             </div>
             <script>
@@ -258,12 +261,13 @@ input[type=submit]:hover {
             </script>
         </div>
 
-        <a href='#' onclick='cekdata()'>Cek Data</a>
         <div id="cekdata">
             <div>
                 <h2><b>Pastikan Data Yang Anda Masukkan Telah benar !</b></h2>
-                <center><img src='../../assets/bg/data.png' style="width:200px; height:200px; align:center; position:relative;"></center>
+                <center><img src='../../assets/bg/data.png' style="width:150px; height:150px; align:center; position:relative;"></center>
                 <h3><a href='../poli/poli.php'>Daftar</a></h3>
+
+                <h3><a href='#' onclick='cekdata()'>Tutup</a></h3>
             </div>
             <script>
                 function cekdata() {
@@ -282,33 +286,24 @@ input[type=submit]:hover {
 <?php
 
 
-if(isset($_POST['Submit'])){
+if(isset($_POST['submit'])){
     
-    $nik = $_POST['nik'];
     
-
-    $cekid = mysqli_query($koneksi, "SELECT * FROM desmuk.pendaftaran where `NIK` = '$nik' ");
-    // var_dump(mysqli_num_rows($cekid));
-    //     exit;
-    //cek id,  idnya ada tidak
-    if( mysqli_num_rows($cekid) >= 1){
-        
-
-        
-            // Kalau NIK Ada DI pendaftaran
             echo "<script> 
             example();
             
             </script>";
-        }else{
-            echo "<script> 
-            
-            document.location.href = '../poli/poli.php';
-            
-            </script>";
-            
-        }
+
+}
+
+if(isset($_POST['gagal'])){
     
+    
+    echo "<script> 
+    cekdata()
+    
+    </script>";
+
 }
 
 

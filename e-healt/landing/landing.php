@@ -8,9 +8,9 @@
     <link rel="stylesheet" href="../../assets/stylesheet.css">
 </head>
     <body style="background-color: #D7B94C;">
-        <!-- <header> -->
+        <!-- <header style="position:relative;"> -->
             <div class="container">
-                <div class="header-top">
+                <div class="header-top" style="margin-top:10px">
                     <p>Jl. Airlangga No.4 - 6, Airlangga, Kota Surabaya.</p>
                     <p>+62 81234567</p>
                 </div>

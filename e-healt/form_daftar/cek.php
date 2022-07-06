@@ -86,8 +86,8 @@ input[type=submit]:hover {
         z-index: 1000;
       }
       #example div {
-        width: 600px;
-        height: 300px;
+        width: 400px;
+        height: 250px;
         margin: 150px auto;
         background-color: #f2f2f2;
         border-radius: 10px;
@@ -115,7 +115,7 @@ input[type=submit]:hover {
                     <p>Jl. Airlangga No.4 - 6, Airlangga, Kota Surabaya.</p>
                     <p>+62 81234567</p>
                 </div>
-                <div class="header-right">
+                <div class="header-right" >
                     <hr>
                     <a href="#">Beranda</a>
                     <a href="#">Profil</a>
@@ -187,7 +187,7 @@ input[type=submit]:hover {
         <div id="example">
             <div>
                 <h2><b>Data Tidak Ditemukan !</b></h2>
-                <center><img src='../../assets/bg/folder.png' style="width:200px; height:200px; align:center; position:relative;"></center>
+                <center><img src='../../assets/bg/folder.png' style="width:150px; height:150px; align:center; position:relative;"></center>
                 <h3><a href='#' onclick='example()'>Tutup</a></h3>
             </div>
             <script>
@@ -209,18 +209,12 @@ if(isset($_POST['Submit'])){
     $nik = $_POST['nik'];
     $nama = strtolower ($_POST['nama']);
     $no = $_POST['no'];
-    // var_dump($nik);
-    // var_dump($nama);
-    // exit;
 
-    $cekid = mysqli_query($koneksi, "SELECT * from pasien where `NIK` = '$nik' ");
-    //cek id,  idnya ada tidak
-    if( mysqli_num_rows($cekid) === 1){
 
-        //cek paswword
-        $user = mysqli_fetch_assoc($cekid);
 
-        if( $user['NAMA'] == $nama ){
+    if(  $nama == 'andika'){
+
+        if( $nik == '123' ){
 
             // Kalau NIK dan Nama Cocok
             echo "<script> 

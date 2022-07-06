@@ -216,8 +216,10 @@ input[type=submit]:hover {
   function runPopup(){  
      if(window.confirm("Apakah Anda Yakin Ingin Menghapus ?"))
      {
-       window.location.href = '../landing/landing.php';
-       window.alert("Data berhasil dihapus!");
+        window.location.href = '../landing/landing.php';
+        window.alert("Data berhasil dihapus!");
+      
+    //    document.location.href = '../landing/landing.php';
      }
      else
      {
